@@ -30,15 +30,15 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Father:" Margin="10,0,0,0"/>
-                    <Button x:Name="Father" Margin="10,0,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="Father" Text="Jon Snow" Margin="10,0,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Mother:" Margin="10,0,0,0"/>
-                    <Button x:Name="Mother" Margin="10,0,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="Mother" Text="Jon Snow" Margin="10,0,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Spouse:" Margin="10,0,0,0"/>
-                    <Button x:Name="Spouse" Margin="10,0,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="Spouse" Text="Jon Snow" Margin="10,0,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Titles:" Margin="10,0,0,0" WidthRequest="55"/>

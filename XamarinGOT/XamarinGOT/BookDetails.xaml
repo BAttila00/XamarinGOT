@@ -23,7 +23,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Label Text="Title: " Grid.Row="0" Grid.Column="0" Margin="10,10,0,0" Width="42" Height="22"/>
+            <Label Text="Title: " Grid.Row="0" Grid.Column="0" Margin="10,10,0,0"/>
             <Label x:Name="BookTitle" Grid.Row="0" Grid.Column="1" Margin="10,10,0,0"/>
 
             <Label Text="isbn: " Grid.Row="1" Grid.Column="0" Margin="10,10,0,0"/>

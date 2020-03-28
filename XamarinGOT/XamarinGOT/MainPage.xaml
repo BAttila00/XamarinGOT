@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinGOT.MainPage">
+             x:Class="XamarinGOT.MainPage"
+             Title="MainPage">
     <ContentPage.Content>
         <Grid BackgroundColor="LightGray">
             <Grid.ColumnDefinitions>
@@ -22,7 +23,7 @@
             <SearchBar Grid.Row="0" Grid.Column="1" Placeholder="Search..." Margin="0,0,0,0" FontSize="Medium" SearchButtonPressed="SearchTapped" >
 
             </SearchBar>
-            <ListView x:Name="ResultList" Grid.Row="1" Grid.Column="0" BackgroundColor="LightGray" Grid.ColumnSpan="2" >
+            <ListView ItemTapped="MainListItemTapped" x:Name="MainList" Grid.Row="1" Grid.Column="0" BackgroundColor="LightGray" Grid.ColumnSpan="2" >
                 
             </ListView>
 

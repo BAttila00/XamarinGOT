@@ -27,12 +27,43 @@ namespace XamarinGOT
             Characters.Add("Jaime Lannister");
 
             CategoryPicker.ItemsSource = Categories;
-            ResultList.ItemsSource = Characters;
+            MainList.ItemsSource = Characters;
         }
 
         private void SearchTapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new HouseDetails());
+            switch ((string)CategoryPicker.SelectedItem)
+            {
+                case "Books":
+                    Navigation.PushAsync(new BookDetails());
+                    break;
+                case "Characters":
+                    Navigation.PushAsync(new CharacterDetails());
+                    break;
+                case "Houses":
+                    Navigation.PushAsync(new HouseDetails());
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void MainListItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            switch ((string)CategoryPicker.SelectedItem)
+            {
+                case "Books":
+                    Navigation.PushAsync(new BookDetails());
+                    break;
+                case "Characters":
+                    Navigation.PushAsync(new CharacterDetails());
+                    break;
+                case "Houses":
+                    Navigation.PushAsync(new HouseDetails());
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -26,15 +26,15 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Current lord:" Margin="10,10,0,0"/>
-                    <Button x:Name="CurrentLord" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="CurrentLord" Text="Jon Snow" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Heir:" Margin="10,10,0,0"/>
-                    <Button x:Name="Heir" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="Heir" Text="Jon Snow" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Overlord:" Margin="10,10,0,0"/>
-                    <Button x:Name="Overlord" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="Overlord" Text="House Lannister" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Founded:" Margin="10,10,0,0"/>
@@ -42,7 +42,7 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Founder:" Margin="10,10,0,0"/>
-                    <Button x:Name="Founder" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="Founder" Text="Jon Snow" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Died out:" Margin="10,10,0,0"/>
