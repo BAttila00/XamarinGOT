@@ -17,14 +17,18 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Picker x:Name="CategoryPicker" Grid.Row="0" Grid.Column="0" WidthRequest="150" Title="Choose" Margin="5,0,0,0">
+            <Picker x:Name="CategoryPicker" SelectedIndexChanged="CategoryChanged" Grid.Row="0" Grid.Column="0" WidthRequest="150" Title="Choose" Margin="5,0,0,0">
 
             </Picker>
             <SearchBar Grid.Row="0" Grid.Column="1" Placeholder="Search..." Margin="0,0,0,0" FontSize="Medium" SearchButtonPressed="SearchTapped" >
 
             </SearchBar>
-            <ListView ItemTapped="MainListItemTapped" x:Name="MainList" Grid.Row="1" Grid.Column="0" BackgroundColor="LightGray" Grid.ColumnSpan="2" >
-                
+            <ListView x:Name="MainList" ItemTapped="MainListItemTapped" Grid.Row="1" Grid.Column="0" BackgroundColor="LightGray" Grid.ColumnSpan="2" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding name}" TextColor="#e20074" DetailColor="White" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
 
 
