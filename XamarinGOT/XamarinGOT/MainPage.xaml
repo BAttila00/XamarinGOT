@@ -4,13 +4,30 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinGOT.MainPage">
+             x:Class="XamarinGOT.MainPage"
+             Title="MainPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+            <Picker x:Name="CategoryPicker" Grid.Row="0" Grid.Column="0" WidthRequest="150" Title="Choose" Margin="5,0,0,0">
 
+            </Picker>
+            <SearchBar Grid.Row="0" Grid.Column="1" Placeholder="Search..." Margin="0,0,0,0" FontSize="Medium" SearchButtonPressed="SearchTapped" >
+
+            </SearchBar>
+            <ListView ItemTapped="MainListItemTapped" x:Name="MainList" Grid.Row="1" Grid.Column="0" BackgroundColor="LightGray" Grid.ColumnSpan="2" >
+                
+            </ListView>
+
+
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>
