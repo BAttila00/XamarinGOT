@@ -26,10 +26,10 @@ namespace XamarinGOT {
 
         public BookDetails(string url) {
             InitializeComponent();
-            FillViewParameters(url);
+            FillViewFields(url);
         }
 
-        public async void FillViewParameters(string url) {
+        public async void FillViewFields(string url) {
             var service = new GOTService();
             Book = await service.GetBookAsync(url);
 

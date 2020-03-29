@@ -16,5 +16,8 @@ namespace XamarinGOT
         {
             InitializeComponent();
         }
+
+        public CharacterDetails(string url) {
+        }
     }
 }

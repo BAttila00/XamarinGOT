@@ -10,59 +10,67 @@
             <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
                     <Label Text="House's name:" Margin="10,10,0,0"/>
-                    <Label x:Name="Name" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Label x:Name="NameLabel" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Region:" Margin="10,10,0,0"/>
-                    <Label x:Name="Region" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Label x:Name="RegionLabel" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Words:" Margin="10,10,0,0"/>
-                    <Label x:Name="Words" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Label x:Name="WordsLabel" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Coat of Arms:" Margin="10,10,0,0"/>
-                    <Label x:Name="Coat" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Label x:Name="CoatLabel" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Current lord:" Margin="10,10,0,0"/>
-                    <Button x:Name="CurrentLord" Text="Jon Snow" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="CurrentLordBtn" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Heir:" Margin="10,10,0,0"/>
-                    <Button x:Name="Heir" Text="Jon Snow" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="HeirBtn" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Overlord:" Margin="10,10,0,0"/>
-                    <Button x:Name="Overlord" Text="House Lannister" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="OverlordBtn" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Founded:" Margin="10,10,0,0"/>
-                    <Label x:Name="Founded" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Label x:Name="FoundedLabel" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Founder:" Margin="10,10,0,0"/>
-                    <Button x:Name="Founder" Text="Jon Snow" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="FounderBtn" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Died out:" Margin="10,10,0,0"/>
-                    <Label x:Name="DiedOut" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
+                    <Label x:Name="DiedOutLabel" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Sworn Members:" Margin="10,0,0,0" WidthRequest="80"/>
                     <ListView x:Name="SwornMembersList" HeightRequest="200" Margin="10,0,50,0">
-
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding name}" TextColor="#e20074" DetailColor="White" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Cadet Branches:" Margin="10,0,0,0" WidthRequest="80"/>
                     <ListView x:Name="CadetBranchesList" HeightRequest="200" Margin="10,0,50,0">
-
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding name}" TextColor="#e20074" DetailColor="White" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Ancestral Weapons:" Margin="10,0,0,0" WidthRequest="80"/>
-                    <ListView x:Name="AncestralWeapons" HeightRequest="200" Margin="10,0,50,0">
+                    <ListView x:Name="AncestralWeaponsList" HeightRequest="200" Margin="10,0,50,0">
 
                     </ListView>
                 </StackLayout>

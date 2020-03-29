@@ -60,10 +60,12 @@ namespace XamarinGOT {
                     Navigation.PushAsync(new BookDetails(selectedBook.url));
                     break;
                 case "Characters":
-                    Navigation.PushAsync(new CharacterDetails());
+                    var selectedCharacter = (Character)selectedItem;
+                    Navigation.PushAsync(new CharacterDetails(selectedCharacter.url));
                     break;
                 case "Houses":
-                    Navigation.PushAsync(new HouseDetails());
+                    var selectedHouse = (House)selectedItem;
+                    Navigation.PushAsync(new HouseDetails(selectedHouse.url));
                     break;
                 default:
                     break;
