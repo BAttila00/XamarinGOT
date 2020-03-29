@@ -8,7 +8,39 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical">
-                <StackLayout Orientation="Horizontal">
+                <Label Text="House's name:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="NameLabel" HorizontalOptions="Center"/>
+                <Label Text="Region:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="RegionLabel" HorizontalOptions="Center"/>
+                <Label Text="Words:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="WordsLabel" HorizontalOptions="Center"/>
+                <Label Text="Coat of Arms:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="CoatLabel" HorizontalOptions="Center"/>
+                <Label Text="Founded:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="FoundedLabel" HorizontalOptions="Center"/>
+                <Label Text="Died out:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="DiedOutLabel" HorizontalOptions="Center"/>
+
+                <Label Text="Current lord:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="CurrentLordBtn" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Heir:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="HeirBtn" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Overlord:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="OverlordBtn" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Founder:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="FounderBtn" HorizontalOptions="FillAndExpand"/>
+
+                <Label Text="Sworn Members:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button Text="Go to List" HorizontalOptions="FillAndExpand" Pressed="SwornMembersBtnPressed"/>
+                <Label Text="Cadet Branches:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Ancestral Weapons:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Seats:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Titles:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <!--<StackLayout Orientation="Horizontal">
                     <Label Text="House's name:" Margin="10,10,0,0"/>
                     <Label x:Name="NameLabel" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
@@ -85,7 +117,7 @@
                     <ListView x:Name="TitlesList" HeightRequest="200" Margin="10,0,50,0">
 
                     </ListView>
-                </StackLayout>
+                </StackLayout>-->
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -66,12 +66,14 @@ namespace XamarinGOT
             var service = new GOTService();
             House = await service.GetHouseAsync(url);
 
+            HideEmptyFieldsOnView();
+
             NameLabel.Text = House.name;
             RegionLabel.Text = House.region;
             WordsLabel.Text = House.words;
             CoatLabel.Text = House.coatOfArms;
-            FoundedLabel.Text = House.founded.ToString();
-            DiedOutLabel.Text = House.diedOut.ToString();
+            FoundedLabel.Text = House.founded;
+            DiedOutLabel.Text = House.diedOut;
 
             if (House.currentLord != "") {
                 CurrentLord = await service.GetAsync<Character>(new Uri(House.currentLord));
@@ -90,32 +92,43 @@ namespace XamarinGOT
                 FounderBtn.Text = Founder.name;
             }
 
-            foreach (var title in House.titles) {
-                Titles.Add(title);
-            }
-            TitlesList.ItemsSource = Titles;
+            //foreach (var title in House.titles) {
+            //    Titles.Add(title);
+            //}
+            //TitlesList.ItemsSource = Titles;
 
-            foreach (var seat in House.seats) {
-                Seats.Add(seat);
-            }
-            SeatsList.ItemsSource = Seats;
+            //foreach (var seat in House.seats) {
+            //    Seats.Add(seat);
+            //}
+            //SeatsList.ItemsSource = Seats;
 
-            foreach (var ancestralWeapon in House.ancestralWeapons) {
-                AncestralWeapons.Add(ancestralWeapon);
-            }
-            AncestralWeaponsList.ItemsSource = AncestralWeapons;
+            //foreach (var ancestralWeapon in House.ancestralWeapons) {
+            //    AncestralWeapons.Add(ancestralWeapon);
+            //}
+            //AncestralWeaponsList.ItemsSource = AncestralWeapons;
 
-            var swornMembers = await service.GetItemsList<Character>(House.swornMembers);
-            foreach (var character in swornMembers) {
-                SwornMembers.Add(character);
-            }
-            SwornMembersList.ItemsSource = SwornMembers;
+            //var swornMembers = await service.GetItemsList<Character>(House.swornMembers);
+            //foreach (var character in swornMembers) {
+            //    SwornMembers.Add(character);
+            //}
+            //SwornMembersList.ItemsSource = SwornMembers;
 
-            var cadetBranches = await service.GetItemsList<House>(House.cadetBranches);
-            foreach (var house in cadetBranches) {
-                CadetBranches.Add(house);
+            //var cadetBranches = await service.GetItemsList<House>(House.cadetBranches);
+            //foreach (var house in cadetBranches) {
+            //    CadetBranches.Add(house);
+            //}
+            //CadetBranchesList.ItemsSource = CadetBranches;
+        }
+
+        //TODO
+        private void HideEmptyFieldsOnView() {
+            if(House.region == "") {
+
             }
-            CadetBranchesList.ItemsSource = CadetBranches;
+        }
+
+        private void SwornMembersBtnPressed(object sender, EventArgs e) {
+            Navigation.PushAsync(new DisplayListItems(House.swornMembers, "Characters"));
         }
     }
 }
