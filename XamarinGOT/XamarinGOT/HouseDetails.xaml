@@ -10,36 +10,37 @@
             <StackLayout Orientation="Vertical">
                 <Label Text="House's name:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Label x:Name="NameLabel" HorizontalOptions="Center"/>
-                <Label Text="Region:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <!--csak azért kell RegionLabel0-t elnevezni h el tudjam tuntetni-->
+                <Label x:Name="RegionLabel0" Text="Region:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Label x:Name="RegionLabel" HorizontalOptions="Center"/>
-                <Label Text="Words:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="WordsLabel0" Text="Words:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Label x:Name="WordsLabel" HorizontalOptions="Center"/>
-                <Label Text="Coat of Arms:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="CoatLabel0" Text="Coat of Arms:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Label x:Name="CoatLabel" HorizontalOptions="Center"/>
-                <Label Text="Founded:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="FoundedLabel0" Text="Founded:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Label x:Name="FoundedLabel" HorizontalOptions="Center"/>
-                <Label Text="Died out:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="DiedOutLabel0" Text="Died out:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Label x:Name="DiedOutLabel" HorizontalOptions="Center"/>
 
-                <Label Text="Current lord:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="CurrentLordBtn0" Text="Current lord:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Button x:Name="CurrentLordBtn" HorizontalOptions="FillAndExpand"/>
-                <Label Text="Heir:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="HeirBtn0" Text="Heir:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Button x:Name="HeirBtn" HorizontalOptions="FillAndExpand"/>
-                <Label Text="Overlord:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="OverlordBtn0" Text="Overlord:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Button x:Name="OverlordBtn" HorizontalOptions="FillAndExpand"/>
-                <Label Text="Founder:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="FounderBtn0" Text="Founder:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Button x:Name="FounderBtn" HorizontalOptions="FillAndExpand"/>
 
-                <Label Text="Sworn Members:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button Text="Go to List" HorizontalOptions="FillAndExpand" Pressed="SwornMembersBtnPressed"/>
-                <Label Text="Cadet Branches:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button Text="Go to List" HorizontalOptions="FillAndExpand"/>
-                <Label Text="Ancestral Weapons:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button Text="Go to List" HorizontalOptions="FillAndExpand"/>
-                <Label Text="Seats:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button Text="Go to List" HorizontalOptions="FillAndExpand"/>
-                <Label Text="Titles:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="SwornMembersBtn0" Text="Sworn Members:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="SwornMembersBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Pressed="SwornMembersBtnPressed"/>
+                <Label x:Name="CadetBranchesBtn0" Text="Cadet Branches:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="CadetBranchesBtn" Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="AncestralWeaponsBtn0" Text="Ancestral Weapons:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="AncestralWeaponsBtn" Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="SeatsBtn0" Text="Seats:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="SeatsBtn" Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="TitlesBtn0" Text="Titles:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="TitlesBtn" Text="Go to List" HorizontalOptions="FillAndExpand"/>
                 <!--<StackLayout Orientation="Horizontal">
                     <Label Text="House's name:" Margin="10,10,0,0"/>
                     <Label x:Name="NameLabel" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>

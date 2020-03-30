@@ -6,9 +6,10 @@
              mc:Ignorable="d"
              x:Class="XamarinGOT.DisplayListItems">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout x:Name="MainStackLayout">
             <Label Text="List Items:"/>
-            <ListView x:Name="DisplayList">
+            <ActivityIndicator x:Name="ActInd" IsVisible="True" IsRunning="True" IsEnabled="True" Color="DarkGray" BackgroundColor="Transparent" HorizontalOptions="Center"/>
+                <ListView x:Name="DisplayList" ItemTapped="DisplayListTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding name}" TextColor="#e20074" DetailColor="White" />

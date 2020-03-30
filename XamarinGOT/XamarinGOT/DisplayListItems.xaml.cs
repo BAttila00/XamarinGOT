@@ -18,23 +18,57 @@ namespace XamarinGOT {
         public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
         public ObservableCollection<Book> Books { get; set; } = new ObservableCollection<Book>();
 
+        string displayedItemTypes = "";
+
         public DisplayListItems() {
             InitializeComponent();
         }
         public DisplayListItems(string[] listItems, string type) {
             InitializeComponent();
-            FillViewFields(listItems, type);
-
+            displayedItemTypes = type;
+            FillViewFields(listItems);
         }
 
-        private async void FillViewFields(string[] listItems, string type) {
+        private async void FillViewFields(string[] listItems) {
             var service = new GOTService();
-            if(type == "Characters") {
+            if(displayedItemTypes == "Characters") {
                 var swornMembers = await service.GetItemsList<Character>(listItems);
                 foreach (var character in swornMembers) {
                     Characters.Add(character);
                 }
                 DisplayList.ItemsSource = Characters;
+                MainStackLayout.Children.Remove(ActInd);
+            }
+            if (displayedItemTypes == "Houses") {
+                var houses = await service.GetItemsList<House>(listItems);
+                foreach (var house in houses) {
+                    Houses.Add(house);
+                }
+                DisplayList.ItemsSource = Houses;
+                MainStackLayout.Children.Remove(ActInd);
+            }
+            if (displayedItemTypes == "Books") {
+                var books = await service.GetItemsList<Book>(listItems);
+                foreach (var book in books) {
+                    Books.Add(book);
+                }
+                DisplayList.ItemsSource = Books;
+                MainStackLayout.Children.Remove(ActInd);
+            }
+        }
+
+        private void DisplayListTapped(object sender, ItemTappedEventArgs e) {
+            if (displayedItemTypes == "Characters") {
+                string url = ((Character)e.Item).url;
+                Navigation.PushAsync(new CharacterDetails(url));
+            }
+            if (displayedItemTypes == "Houses") {
+                string url = ((Character)e.Item).url;
+                Navigation.PushAsync(new HouseDetails(url));
+            }
+            if (displayedItemTypes == "Books") {
+                string url = ((Book)e.Item).url;
+                Navigation.PushAsync(new BookDetails(url));
             }
         }
     }

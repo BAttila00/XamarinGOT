@@ -123,7 +123,64 @@ namespace XamarinGOT
         //TODO
         private void HideEmptyFieldsOnView() {
             if(House.region == "") {
+                RegionLabel0.IsVisible = false;     //csak azért kell RegionLabel0-t elnevezni h el tudjam tuntetni
+                RegionLabel.IsVisible = false;
+            }
+            if (House.words == "") {
+                WordsLabel0.IsVisible = false;
+                WordsLabel.IsVisible = false;
+            }
+            if (House.coatOfArms == "") {
+                CoatLabel0.IsVisible = false;
+                CoatLabel.IsVisible = false;
+            }
+            if (House.founded == "") {
+                FoundedLabel0.IsVisible = false;
+                FoundedLabel.IsVisible = false;
+            }
+            if (House.diedOut == "") {
+                DiedOutLabel0.IsVisible = false;
+                DiedOutLabel.IsVisible = false;
+            }
 
+            //------------
+            if (House.currentLord == "") {
+                CurrentLordBtn0.IsVisible = false;
+                CurrentLordBtn.IsVisible = false;
+            }
+            if (House.heir == "") {
+                HeirBtn0.IsVisible = false;
+                HeirBtn.IsVisible = false;
+            }
+            if (House.overlord == "") {
+                OverlordBtn0.IsVisible = false;
+                OverlordBtn.IsVisible = false;
+            }
+            if (House.founder == "") {
+                FounderBtn0.IsVisible = false;
+                FounderBtn.IsVisible = false;
+            }
+
+            //-----------
+            if(House.swornMembers.Length == 0) {
+                SwornMembersBtn0.IsVisible = false;
+                SwornMembersBtn.IsVisible = false;
+            }
+            if (House.cadetBranches.Length == 0) {
+                CadetBranchesBtn0.IsVisible = false;
+                CadetBranchesBtn.IsVisible = false;
+            }
+            if (House.ancestralWeapons.Length == 0) {
+                AncestralWeaponsBtn0.IsVisible = false;
+                AncestralWeaponsBtn.IsVisible = false;
+            }
+            if (House.seats.Length == 0) {
+                SeatsBtn0.IsVisible = false;
+                SeatsBtn.IsVisible = false;
+            }
+            if (House.titles.Length == 0) {
+                TitlesBtn0.IsVisible = false;
+                TitlesBtn.IsVisible = false;
             }
         }
 
