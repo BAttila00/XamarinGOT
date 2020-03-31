@@ -184,8 +184,16 @@ namespace XamarinGOT
             }
         }
 
-        private void SwornMembersBtnPressed(object sender, EventArgs e) {
+        private void SwornMembersBtnClicked(object sender, EventArgs e) {
             Navigation.PushAsync(new DisplayListItems(House.swornMembers, "Characters"));
+        }
+
+        private void AncestralWeaponsBtnClicked(object sender, EventArgs e) {
+            Navigation.PushAsync(new DisplayListItems(House.ancestralWeapons));
+        }
+
+        private void SeatsBtnClicked(object sender, EventArgs e) {
+            Navigation.PushAsync(new DisplayListItems(House.seats));
         }
     }
 }

@@ -32,13 +32,13 @@
                 <Button x:Name="FounderBtn" HorizontalOptions="FillAndExpand"/>
 
                 <Label x:Name="SwornMembersBtn0" Text="Sworn Members:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="SwornMembersBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Pressed="SwornMembersBtnPressed"/>
+                <Button x:Name="SwornMembersBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="SwornMembersBtnClicked"/>
                 <Label x:Name="CadetBranchesBtn0" Text="Cadet Branches:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Button x:Name="CadetBranchesBtn" Text="Go to List" HorizontalOptions="FillAndExpand"/>
                 <Label x:Name="AncestralWeaponsBtn0" Text="Ancestral Weapons:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="AncestralWeaponsBtn" Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="AncestralWeaponsBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="AncestralWeaponsBtnClicked"/>
                 <Label x:Name="SeatsBtn0" Text="Seats:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="SeatsBtn" Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="SeatsBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="SeatsBtnClicked"/>
                 <Label x:Name="TitlesBtn0" Text="Titles:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Button x:Name="TitlesBtn" Text="Go to List" HorizontalOptions="FillAndExpand"/>
                 <!--<StackLayout Orientation="Horizontal">

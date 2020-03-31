@@ -17,6 +17,7 @@ namespace XamarinGOT {
         public ObservableCollection<House> Houses { get; set; } = new ObservableCollection<House>();
         public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
         public ObservableCollection<Book> Books { get; set; } = new ObservableCollection<Book>();
+        public ObservableCollection<string> OtherItems { get; set; } = new ObservableCollection<string>();
 
         string displayedItemTypes = "";
 
@@ -26,6 +27,11 @@ namespace XamarinGOT {
         public DisplayListItems(string[] listItems, string type) {
             InitializeComponent();
             displayedItemTypes = type;
+            FillViewFields(listItems);
+        }
+
+        public DisplayListItems(string[] listItems) {
+            InitializeComponent();
             FillViewFields(listItems);
         }
 
@@ -39,7 +45,7 @@ namespace XamarinGOT {
                 DisplayList.ItemsSource = Characters;
                 MainStackLayout.Children.Remove(ActInd);
             }
-            if (displayedItemTypes == "Houses") {
+            else if (displayedItemTypes == "Houses") {
                 var houses = await service.GetItemsList<House>(listItems);
                 foreach (var house in houses) {
                     Houses.Add(house);
@@ -47,12 +53,21 @@ namespace XamarinGOT {
                 DisplayList.ItemsSource = Houses;
                 MainStackLayout.Children.Remove(ActInd);
             }
-            if (displayedItemTypes == "Books") {
+            else if (displayedItemTypes == "Books") {
                 var books = await service.GetItemsList<Book>(listItems);
                 foreach (var book in books) {
                     Books.Add(book);
                 }
                 DisplayList.ItemsSource = Books;
+                MainStackLayout.Children.Remove(ActInd);
+            } else {
+                foreach (var item in listItems) {
+                    OtherItems.Add(item);
+                }
+                DisplayList.ItemTemplate = null;
+                DisplayList.ItemsSource = OtherItems;
+                //DisplayList2.ItemsSource = OtherItems;
+                //MainStackLayout.Children.Remove(DisplayList);
                 MainStackLayout.Children.Remove(ActInd);
             }
         }
