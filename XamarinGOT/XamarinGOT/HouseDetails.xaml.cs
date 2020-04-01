@@ -195,5 +195,29 @@ namespace XamarinGOT
         private void SeatsBtnClicked(object sender, EventArgs e) {
             Navigation.PushAsync(new DisplayListItems(House.seats));
         }
+
+        private void TitlesBtnClicked(object sender, EventArgs e) {
+            Navigation.PushAsync(new DisplayListItems(House.titles));
+        }
+
+        private void CadetBranchesBtnClicked(object sender, EventArgs e) {
+            Navigation.PushAsync(new DisplayListItems(House.cadetBranches, "Houses"));
+        }
+
+        private void CurrentLordBtnClicked(object sender, EventArgs e) {
+            Navigation.PushAsync(new CharacterDetails(House.currentLord));
+        }
+
+        private void HeirBtnClicked(object sender, EventArgs e) {
+            Navigation.PushAsync(new CharacterDetails(House.heir));
+        }
+
+        private void OverlordBtnClicked(object sender, EventArgs e) {
+            Navigation.PushAsync(new HouseDetails(House.overlord));
+        }
+
+        private void FounderBtnClicked(object sender, EventArgs e) {
+            Navigation.PushAsync(new CharacterDetails(House.founder));
+        }
     }
 }

@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="House"
              x:Class="XamarinGOT.HouseDetails">
     <ContentPage.Content>
         <ScrollView>
@@ -23,24 +24,24 @@
                 <Label x:Name="DiedOutLabel" HorizontalOptions="Center"/>
 
                 <Label x:Name="CurrentLordBtn0" Text="Current lord:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="CurrentLordBtn" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="CurrentLordBtn" HorizontalOptions="FillAndExpand" Clicked="CurrentLordBtnClicked"/>
                 <Label x:Name="HeirBtn0" Text="Heir:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="HeirBtn" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="HeirBtn" HorizontalOptions="FillAndExpand" Clicked="HeirBtnClicked"/>
                 <Label x:Name="OverlordBtn0" Text="Overlord:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="OverlordBtn" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="OverlordBtn" HorizontalOptions="FillAndExpand" Clicked="OverlordBtnClicked"/>
                 <Label x:Name="FounderBtn0" Text="Founder:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="FounderBtn" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="FounderBtn" HorizontalOptions="FillAndExpand" Clicked="FounderBtnClicked"/>
 
                 <Label x:Name="SwornMembersBtn0" Text="Sworn Members:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Button x:Name="SwornMembersBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="SwornMembersBtnClicked"/>
                 <Label x:Name="CadetBranchesBtn0" Text="Cadet Branches:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="CadetBranchesBtn" Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="CadetBranchesBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="CadetBranchesBtnClicked"/>
                 <Label x:Name="AncestralWeaponsBtn0" Text="Ancestral Weapons:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Button x:Name="AncestralWeaponsBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="AncestralWeaponsBtnClicked"/>
                 <Label x:Name="SeatsBtn0" Text="Seats:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Button x:Name="SeatsBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="SeatsBtnClicked"/>
                 <Label x:Name="TitlesBtn0" Text="Titles:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="TitlesBtn" Text="Go to List" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="TitlesBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="TitlesBtnClicked"/>
                 <!--<StackLayout Orientation="Horizontal">
                     <Label Text="House's name:" Margin="10,10,0,0"/>
                     <Label x:Name="NameLabel" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
