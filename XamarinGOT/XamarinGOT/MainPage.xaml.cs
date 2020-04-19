@@ -17,8 +17,11 @@ namespace XamarinGOT {
         public ObservableCollection<string> Categories { get; set; } = new ObservableCollection<string>();
         //public ObservableCollection<string> Characters { get; set; } = new ObservableCollection<string>();
         public ObservableCollection<Book> ThroneBooks { get; set; } = new ObservableCollection<Book>();
+        public ObservableCollection<Book> SearchResultThroneBooks { get; set; } = new ObservableCollection<Book>();
         public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
+        public ObservableCollection<Character> SearchResultCharacters { get; set; } = new ObservableCollection<Character>();
         public ObservableCollection<House> Houses { get; set; } = new ObservableCollection<House>();
+        public ObservableCollection<House> SearchResultHouses { get; set; } = new ObservableCollection<House>();
         public MainPage() {
             InitializeComponent();
             Categories.Add("Books");
@@ -34,17 +37,30 @@ namespace XamarinGOT {
 
         private void SearchTapped(object sender, EventArgs e) {
             string selectedCategory = CategoryPicker.SelectedItem.ToString();
-            object selectedItem = MainList.SelectedItem;
             switch (selectedCategory) {
                 case "Books":
-                    var selectedBook = (Book)selectedItem;
-                    Navigation.PushAsync(new BookDetails(selectedBook.url));
+                    SearchResultThroneBooks.Clear();
+                    foreach (var item in ThroneBooks) {
+                        if (item.name.ToLower().Contains(Search.Text))
+                            SearchResultThroneBooks.Add(item);
+                    }
+                    MainList.ItemsSource = SearchResultThroneBooks;
                     break;
                 case "Characters":
-                    Navigation.PushAsync(new CharacterDetails());
+                    SearchResultCharacters.Clear();
+                    foreach (var item in Characters) {
+                        if (item.name.ToLower().Contains(Search.Text))
+                            SearchResultCharacters.Add(item);
+                    }
+                    MainList.ItemsSource = SearchResultCharacters;
                     break;
                 case "Houses":
-                    Navigation.PushAsync(new HouseDetails());
+                    SearchResultHouses.Clear();
+                    foreach (var item in Houses) {
+                        if (item.name.ToLower().Contains(Search.Text))
+                            SearchResultHouses.Add(item);
+                    }
+                    MainList.ItemsSource = SearchResultHouses;
                     break;
                 default:
                     break;
@@ -106,6 +122,26 @@ namespace XamarinGOT {
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void SearchTextChanged(object sender, TextChangedEventArgs e) {
+            string selectedCategory = CategoryPicker.Items[CategoryPicker.SelectedIndex];
+
+            if (Search.Text == "") {
+                switch (selectedCategory) {
+                    case "Books":
+                        MainList.ItemsSource = ThroneBooks;
+                        break;
+                    case "Characters":
+                        MainList.ItemsSource = Characters;
+                        break;
+                    case "Houses":
+                        MainList.ItemsSource = Houses;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
