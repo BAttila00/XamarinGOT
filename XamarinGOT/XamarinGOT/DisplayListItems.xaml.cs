@@ -78,7 +78,7 @@ namespace XamarinGOT {
                 Navigation.PushAsync(new CharacterDetails(url));
             }
             if (displayedItemTypes == "Houses") {
-                string url = ((Character)e.Item).url;
+                string url = ((House)e.Item).url;
                 Navigation.PushAsync(new HouseDetails(url));
             }
             if (displayedItemTypes == "Books") {

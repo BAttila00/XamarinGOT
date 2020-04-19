@@ -51,5 +51,9 @@ namespace XamarinGOT {
 
             BookCharacters.ItemsSource = CharactersInBook;
         }
+
+        private void BookCharactersItemTapped(object sender, ItemTappedEventArgs e) {
+            Navigation.PushAsync(new CharacterDetails(((Character)e.Item).url));
+        }
     }
 }
