@@ -4,84 +4,43 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="Character"
              x:Class="XamarinGOT.CharacterDetails">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical">
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Name:" Margin="10,10,0,0"/>
-                    <Label x:Name="Name" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Gender:" Margin="10,10,0,0"/>
-                    <Label x:Name="Gender" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Culture:" Margin="10,10,0,0"/>
-                    <Label x:Name="Culture" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Born:" Margin="10,10,0,0"/>
-                    <Label x:Name="Born" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Died:" Margin="10,10,0,0"/>
-                    <Label x:Name="Died" Margin="10,10,50,0" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Father:" Margin="10,0,0,0"/>
-                    <Button x:Name="Father" Text="Jon Snow" Margin="10,0,50,0" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Mother:" Margin="10,0,0,0"/>
-                    <Button x:Name="Mother" Text="Jon Snow" Margin="10,0,50,0" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Spouse:" Margin="10,0,0,0"/>
-                    <Button x:Name="Spouse" Text="Jon Snow" Margin="10,0,50,0" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Titles:" Margin="10,0,0,0" WidthRequest="55"/>
-                    <ListView x:Name="Titles" HeightRequest="200" Margin="10,0,50,0">
-                        
-                    </ListView>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Aliases:" Margin="10,0,0,0" WidthRequest="70"/>
-                    <ListView x:Name="Aliases" HeightRequest="200" Margin="10,0,50,0">
+                <Label Text="Name:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="NameLabel" Margin="10,10,50,0" HorizontalOptions="Center"/>
+                <Label x:Name="GenderLabel0" Text="Gender:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="GenderLabel" Margin="10,10,50,0" HorizontalOptions="Center"/>
+                <Label x:Name="CultureLabel0" Text="Culture:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="CultureLabel" Margin="10,10,50,0" HorizontalOptions="Center"/>
+                <Label x:Name="BornLabel0" Text="Born:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="BornLabel" Margin="10,10,50,0" HorizontalOptions="Center"/>
+                <Label x:Name="DiedLabel0" Text="Died:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Label x:Name="DiedLabel" Margin="10,10,50,0" HorizontalOptions="Center"/>
 
-                    </ListView>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Allegiances:" Margin="10,0,0,0" WidthRequest="85"/>
-                    <ListView x:Name="Allegiances" HeightRequest="200" Margin="10,0,50,0">
+                <Label x:Name="FatherBtn0" Text="Father:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="FatherBtn" Text="Jon Snow" HorizontalOptions="FillAndExpand" Clicked="FatherBtnClicked"/>
+                <Label x:Name="MotherBtn0" Text="Mother:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="MotherBtn" Text="Jon Snow" HorizontalOptions="FillAndExpand" Clicked="MotherBtnClicked"/>
+                <Label x:Name="SpouseBtn0" Text="Spouse:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="SpouseBtn" Text="Jon Snow" HorizontalOptions="FillAndExpand" Clicked="SpouseBtnClicked"/>
 
-                    </ListView>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Books this character was in:" Margin="10,0,0,0" WidthRequest="100"/>
-                    <ListView x:Name="BookList" HeightRequest="200" Margin="10,0,50,0">
-
-                    </ListView>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Books this character was POV in:" Margin="10,0,0,0" WidthRequest="100"/>
-                    <ListView x:Name="PovBooksList" HeightRequest="200" Margin="10,0,50,0">
-
-                    </ListView>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Tv series seasons this character was in:" Margin="10,0,0,0" WidthRequest="100"/>
-                    <ListView x:Name="TVSeriesList" HeightRequest="200" Margin="10,0,50,0">
-
-                    </ListView>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="This character was played by:" Margin="10,0,0,0" WidthRequest="100"/>
-                    <ListView x:Name="PlayedByList" HeightRequest="200" Margin="10,0,50,0">
-
-                    </ListView>
-                </StackLayout>
+                <Label x:Name="TitlesBtn0" Text="Titles:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="TitlesBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="TitlesBtnClicked"/>
+                <Label x:Name="AliasesBtn0" Text="Aliases:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="AliasesBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="AliasesBtnClicked"/>
+                <Label x:Name="AllegiancesBtn0" Text="Allegiances:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="AllegiancesBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="AllegiancesBtnClicked"/>
+                <Label x:Name="BooksBtn0" Text="Books this character was in:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="BooksBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="BooksBtnClicked"/>
+                <Label x:Name="BooksPovBtn0" Text="Books this character was POV in:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="BooksPovBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="BooksPovBtnClicked"/>
+                <Label x:Name="TvSeriesBtn0" Text="Tv series seasons this character was in:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="TvSeriesBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="TvSeriesBtnClicked"/>
+                <Label x:Name="PlayedByBtn0" Text="This character was played by:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
+                <Button x:Name="PlayedByBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="PlayedByBtnClicked"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="Book"
              x:Class="XamarinGOT.BookDetails">
     <ContentPage.Content>
         <Grid BackgroundColor="LightGray">
@@ -43,8 +44,12 @@
 
             </ListView>
             <Label Text="characters: " Grid.Row="7" Grid.Column="0" Margin="10,10,0,0"/>
-            <ListView x:Name="BookCharacters" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" HeightRequest="100">
-
+            <ListView x:Name="BookCharacters" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" HeightRequest="350" ItemTapped="BookCharactersItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding name}" TextColor="#e20074" DetailColor="White" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
 
 
