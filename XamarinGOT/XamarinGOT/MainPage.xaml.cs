@@ -17,17 +17,18 @@ namespace XamarinGOT {
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage {
         public ObservableCollection<string> Categories { get; set; } = new ObservableCollection<string>();
-        private static GotDatabase _map;
+        private static GotDatabase _gotDatabase;
         //public ObservableCollection<string> Characters { get; set; } = new ObservableCollection<string>();
         public ObservableCollection<Book> ThroneBooks { get; set; } = new ObservableCollection<Book>();
         public ObservableCollection<Book> SearchResultThroneBooks { get; set; } = new ObservableCollection<Book>();
         public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
+        public ObservableCollection<CharacterBase> CharactersBase { get; set; } = new ObservableCollection<CharacterBase>();
         public ObservableCollection<Character> SearchResultCharacters { get; set; } = new ObservableCollection<Character>();
         public ObservableCollection<House> Houses { get; set; } = new ObservableCollection<House>();
         public ObservableCollection<House> SearchResultHouses { get; set; } = new ObservableCollection<House>();
         public MainPage() {
             InitializeComponent();
-            _map = App.Database;
+            _gotDatabase = App.Database;
             Categories.Add("Books");
             Categories.Add("Characters");
             Categories.Add("Houses");
@@ -80,7 +81,8 @@ namespace XamarinGOT {
                     Navigation.PushAsync(new BookDetails(selectedBook.url));
                     break;
                 case "Characters":
-                    var selectedCharacter = (Character)selectedItem;
+                    //var selectedCharacter = (Character)selectedItem;
+                    var selectedCharacter = (CharacterBase)selectedItem;
                     Navigation.PushAsync(new CharacterDetails(selectedCharacter.url));
                     break;
                 case "Houses":
@@ -107,13 +109,20 @@ namespace XamarinGOT {
                     MainList.ItemsSource = ThroneBooks;
                     break;
                 case "Characters":
-                    if (!Characters.Any()) {
-                        var characters = await service.GetSelectedList<Character>(selectedCategory.ToLower());
+                    //if (!Characters.Any()) {
+                    //    var characters = await service.GetSelectedList<Character>(selectedCategory.ToLower());
+                    //    foreach (var item in characters) {
+                    //        Characters.Add(item);
+                    //    }
+                    //}
+                    //MainList.ItemsSource = Characters;
+                    if (!CharactersBase.Any()) {
+                        var characters = _gotDatabase.GetCharacterBases();
                         foreach (var item in characters) {
-                            Characters.Add(item);
+                            CharactersBase.Add(item);
                         }
                     }
-                    MainList.ItemsSource = Characters;
+                    MainList.ItemsSource = CharactersBase;
                     break;
                 case "Houses":
                     if (!Houses.Any()) {
