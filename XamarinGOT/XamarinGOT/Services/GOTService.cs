@@ -15,7 +15,6 @@ namespace GameofThrones.Services
 
         private readonly Uri serverUrl = new Uri("https://www.anapioficeandfire.com/");
 
-        //ezt ne használd, helyette -> await service.GetSelectedList<Book>("Books");
         public async Task<List<Book>> GetBooks()
         {
             return await GetAsync<List<Book>>(new Uri(serverUrl, "api/books"));
@@ -56,7 +55,7 @@ namespace GameofThrones.Services
             List<Character> charactersList = new List<Character>();
             foreach (var characterUri in characterUris)
             {
-                charactersList.Add(await GetAsync<Character>(new Uri(characterUri)));       //tehát amikor await-et hívunk akkor a metódus amiben van, az visszatér, hogy az await futása alatt (az abban lévo utasítás/metódus) ne blokkolja a hívó szálat. 04 Xaml 2 -> 21.old
+                charactersList.Add(await GetAsync<Character>(new Uri(characterUri)));       //tehát amikor await-et hívunk akkor a metódus amiben van, az visszatér, hogy az await futása alatt (az abban lévo utasítás/metódus) ne blokkolja a hívó szálat.
             }
             return charactersList;
         }
@@ -90,17 +89,17 @@ namespace GameofThrones.Services
 
         public async Task<Book> GetBookAsync(string bookUrl)
         {
-            return await GetAsync<Book>(new Uri(bookUrl));      //tehát amikor await-et hívunk akkor a metódus amiben van, az visszatér, hogy az await futása alatt (az abban lévo utasítás/metódus) ne blokkolja a hívó szálat. 04 Xaml 2 -> 21.old
+            return await GetAsync<Book>(new Uri(bookUrl));      //tehát amikor await-et hívunk akkor a metódus amiben van, az visszatér, hogy az await futása alatt (az abban lévo utasítás/metódus) ne blokkolja a hívó szálat.
         }
 
         public async Task<House> GetHouseAsync(string url)
         {
-            return await GetAsync<House>(new Uri(url));      //tehát amikor await-et hívunk akkor a metódus amiben van, az visszatér, hogy az await futása alatt (az abban lévo utasítás/metódus) ne blokkolja a hívó szálat. 04 Xaml 2 -> 21.old
+            return await GetAsync<House>(new Uri(url));      //tehát amikor await-et hívunk akkor a metódus amiben van, az visszatér, hogy az await futása alatt (az abban lévo utasítás/metódus) ne blokkolja a hívó szálat.
         }
 
         public async Task<Character> GetCharacterAsync(string url)
         {
-            return await GetAsync<Character>(new Uri(url));      //tehát amikor await-et hívunk akkor a metódus amiben van, az visszatér, hogy az await futása alatt (az abban lévo utasítás/metódus) ne blokkolja a hívó szálat. 04 Xaml 2 -> 21.old
+            return await GetAsync<Character>(new Uri(url));      //tehát amikor await-et hívunk akkor a metódus amiben van, az visszatér, hogy az await futása alatt (az abban lévo utasítás/metódus) ne blokkolja a hívó szálat.
         }
 
 
