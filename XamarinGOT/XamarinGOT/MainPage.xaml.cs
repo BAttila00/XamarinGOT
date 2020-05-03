@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinGOT.DataBase;
 using XamarinGOT.Models;
+
 
 namespace XamarinGOT {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
@@ -15,6 +17,7 @@ namespace XamarinGOT {
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage {
         public ObservableCollection<string> Categories { get; set; } = new ObservableCollection<string>();
+        private static GotDatabase _map;
         //public ObservableCollection<string> Characters { get; set; } = new ObservableCollection<string>();
         public ObservableCollection<Book> ThroneBooks { get; set; } = new ObservableCollection<Book>();
         public ObservableCollection<Book> SearchResultThroneBooks { get; set; } = new ObservableCollection<Book>();
@@ -24,6 +27,7 @@ namespace XamarinGOT {
         public ObservableCollection<House> SearchResultHouses { get; set; } = new ObservableCollection<House>();
         public MainPage() {
             InitializeComponent();
+            _map = App.Database;
             Categories.Add("Books");
             Categories.Add("Characters");
             Categories.Add("Houses");
