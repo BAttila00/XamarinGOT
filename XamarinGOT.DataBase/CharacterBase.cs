@@ -3,9 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace XamarinGOT.Models {
+namespace DatabaseBuilderWPF {
     public class CharacterBase {
-
         public CharacterBase() {
         }
         public CharacterBase(string url, string name) {
@@ -19,3 +18,4 @@ namespace XamarinGOT.Models {
         public string name { get; set; }
     }
 }
+

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatabaseBuilderWPF;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,12 +7,20 @@ namespace XamarinGOT
 {
     public partial class App : Application
     {
+        string _dbPath;
+
+        public static GotDatabase Database {
+            get; set;
+        }
+
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
         }
+
+
 
         protected override void OnStart()
         {

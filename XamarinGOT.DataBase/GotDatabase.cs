@@ -2,10 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using XamarinGOT.Models;
 
 namespace DatabaseBuilderWPF {
-    class GotDatabase {
+    public class GotDatabase {
         readonly SQLiteConnection database;
         public GotDatabase(string dbPath) {
 
