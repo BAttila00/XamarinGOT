@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DatabaseBuilderWPF {
+namespace XamarinGOT.DataBase {
     public class CharacterBase {
         public CharacterBase() {
         }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinGOT.DataBase;
 
 namespace XamarinGOT
 {
@@ -16,9 +17,11 @@ namespace XamarinGOT
     {
         public ObservableCollection<string> Categories { get; set; } = new ObservableCollection<string>();
         public ObservableCollection<string> Characters { get; set; } = new ObservableCollection<string>();
+        private static GotDatabase _map;
         public MainPage()
         {
             InitializeComponent();
+            _map = App.Database;
             Categories.Add("Books");
             Categories.Add("Characters");
             Categories.Add("Houses");
