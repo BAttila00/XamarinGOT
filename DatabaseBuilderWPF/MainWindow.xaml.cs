@@ -28,14 +28,6 @@ namespace DatabaseBuilderWPF {
         public MainWindow() {
             InitializeComponent();
 
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true) {
-                string fileName = openFileDialog.FileName;
-                Debug.WriteLine(fileName);
-                gotDatabase = new GotDatabase(fileName);
-            }
-
-            GetData();
         }
 
         private async void GetData() {
@@ -73,6 +65,17 @@ namespace DatabaseBuilderWPF {
                 T result = JsonConvert.DeserializeObject<T>(json);
                 return result;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true) {
+                string fileName = openFileDialog.FileName;
+                Debug.WriteLine(fileName);
+                gotDatabase = new GotDatabase(fileName);
+            }
+
+            GetData();
         }
     }
 }

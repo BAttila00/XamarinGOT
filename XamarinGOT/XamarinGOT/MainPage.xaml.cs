@@ -24,6 +24,7 @@ namespace XamarinGOT {
         public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
         public ObservableCollection<CharacterBase> CharactersBase { get; set; } = new ObservableCollection<CharacterBase>();
         public ObservableCollection<Character> SearchResultCharacters { get; set; } = new ObservableCollection<Character>();
+        public ObservableCollection<CharacterBase> SearchResultCharactersBase { get; set; } = new ObservableCollection<CharacterBase>();
         public ObservableCollection<House> Houses { get; set; } = new ObservableCollection<House>();
         public ObservableCollection<House> SearchResultHouses { get; set; } = new ObservableCollection<House>();
         public MainPage() {
@@ -37,7 +38,7 @@ namespace XamarinGOT {
             //Characters.Add("Jaime Lannister");
 
             CategoryPicker.ItemsSource = Categories;
-            MainList.ItemsSource = Characters;
+            //MainList.ItemsSource = Characters;
         }
 
         private void SearchTapped(object sender, EventArgs e) {
@@ -53,11 +54,11 @@ namespace XamarinGOT {
                     break;
                 case "Characters":
                     SearchResultCharacters.Clear();
-                    foreach (var item in Characters) {
+                    foreach (var item in CharactersBase) {
                         if (item.name.ToLower().Contains(Search.Text))
-                            SearchResultCharacters.Add(item);
+                            SearchResultCharactersBase.Add(item);
                     }
-                    MainList.ItemsSource = SearchResultCharacters;
+                    MainList.ItemsSource = SearchResultCharactersBase;
                     break;
                 case "Houses":
                     SearchResultHouses.Clear();
@@ -147,7 +148,7 @@ namespace XamarinGOT {
                         MainList.ItemsSource = ThroneBooks;
                         break;
                     case "Characters":
-                        MainList.ItemsSource = Characters;
+                        MainList.ItemsSource = CharactersBase;
                         break;
                     case "Houses":
                         MainList.ItemsSource = Houses;
