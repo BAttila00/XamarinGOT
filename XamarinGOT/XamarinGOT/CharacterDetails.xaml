@@ -21,11 +21,11 @@
                 <Label x:Name="DiedLabel" Margin="10,10,50,0" HorizontalOptions="Center"/>
 
                 <Label x:Name="FatherBtn0" Text="Father:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="FatherBtn" Text="Jon Snow" HorizontalOptions="FillAndExpand" Clicked="FatherBtnClicked"/>
+                <Button x:Name="FatherBtn"  HorizontalOptions="FillAndExpand" Clicked="FatherBtnClicked"/>
                 <Label x:Name="MotherBtn0" Text="Mother:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="MotherBtn" Text="Jon Snow" HorizontalOptions="FillAndExpand" Clicked="MotherBtnClicked"/>
+                <Button x:Name="MotherBtn"  HorizontalOptions="FillAndExpand" Clicked="MotherBtnClicked"/>
                 <Label x:Name="SpouseBtn0" Text="Spouse:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
-                <Button x:Name="SpouseBtn" Text="Jon Snow" HorizontalOptions="FillAndExpand" Clicked="SpouseBtnClicked"/>
+                <Button x:Name="SpouseBtn"  HorizontalOptions="FillAndExpand" Clicked="SpouseBtnClicked"/>
 
                 <Label x:Name="TitlesBtn0" Text="Titles:" HorizontalOptions="Center" BackgroundColor="LightGray"/>
                 <Button x:Name="TitlesBtn" Text="Go to List" HorizontalOptions="FillAndExpand" Clicked="TitlesBtnClicked"/>

@@ -164,7 +164,7 @@ namespace XamarinGOT
         }
 
         private void AllegiancesBtnClicked(object sender, EventArgs e) {
-            Navigation.PushAsync(new DisplayListItems(Character.allegiances));
+            Navigation.PushAsync(new DisplayListItems(Character.allegiances, "Houses"));
         }
 
         private void BooksBtnClicked(object sender, EventArgs e) {

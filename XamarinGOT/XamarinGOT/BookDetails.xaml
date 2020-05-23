@@ -47,7 +47,7 @@
             <ListView x:Name="BookCharacters" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" HeightRequest="350" ItemTapped="BookCharactersItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding name}" TextColor="#e20074" DetailColor="White" />
+                        <TextCell Text="{Binding CharacterName}" TextColor="#e20074" DetailColor="White" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

@@ -28,27 +28,36 @@ namespace DatabaseBuilderWPF {
         public MainWindow() {
             InitializeComponent();
 
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true) {
-                string fileName = openFileDialog.FileName;
-                Debug.WriteLine(fileName);
-                gotDatabase = new GotDatabase(fileName);
-            }
-
-            GetData();
         }
 
         private async void GetData() {
-            List<Character> characters = await GetSelectedList<Character>("Characters");
-            List<CharacterBase> charactersBase = new List<CharacterBase>();
-            foreach (var item in characters) {
-                charactersBase.Add(new CharacterBase(item.url, item.name));
+            //List<Character> characters = await GetSelectedList<Character>("Characters");
+            //List<CharacterBase> charactersBase = new List<CharacterBase>();
+
+            //saving characters
+            //foreach (var item in characters) {
+            //    charactersBase.Add(new CharacterBase(item.url, item.name));
+            //}
+            //Debug.WriteLine("Service Done");
+            //foreach (var item in charactersBase) {
+            //    gotDatabase.SaveCharacterBase(item);
+            //}
+
+            //saving characters by books
+            List<Book> books = await GetSelectedList<Book>("books");
+            List<CharactersInBook> charactersInBook = new List<CharactersInBook>();
+            foreach (var item in books) {
+                Debug.WriteLine("NEXT BOOK");
+                var bookCharacters = await GetCharactersInBook(item.characters);
+                foreach (var character in bookCharacters) {
+                    charactersInBook.Add(new CharactersInBook(item.url, item.name, character.url, character.name));
+                }
             }
-            Debug.WriteLine("Service Done");
-            foreach (var item in charactersBase) {
-                gotDatabase.SaveCharacterBase(item);
+            Debug.WriteLine("---------------------Getting Data: Done---------------------");
+            foreach (var item in charactersInBook) {
+                gotDatabase.SaveCharacterInBook(item);
             }
-            Debug.WriteLine("Data saving Done");
+            Debug.WriteLine("---------------------Data saving: Done---------------------");
         }
 
         private static readonly Uri serverUrl = new Uri("https://www.anapioficeandfire.com/");
@@ -66,6 +75,14 @@ namespace DatabaseBuilderWPF {
             return listToReturn;
         }
 
+        public async Task<List<Character>> GetCharactersInBook(string[] characterUris) {
+            List<Character> charactersList = new List<Character>();
+            foreach (var characterUri in characterUris) {
+                charactersList.Add(await GetAsync<Character>(new Uri(characterUri)));       //tehát amikor await-et hívunk akkor a metódus amiben van, az visszatér, hogy az await futása alatt (az abban lévo utasítás/metódus) ne blokkolja a hívó szálat.
+            }
+            return charactersList;
+        }
+
         public static async Task<T> GetAsync<T>(Uri uri) {
             using (var client = new HttpClient()) {
                 var response = await client.GetAsync(uri);
@@ -73,6 +90,17 @@ namespace DatabaseBuilderWPF {
                 T result = JsonConvert.DeserializeObject<T>(json);
                 return result;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true) {
+                string fileName = openFileDialog.FileName;
+                Debug.WriteLine(fileName);
+                gotDatabase = new GotDatabase(fileName);
+            }
+
+            GetData();
         }
     }
 }
