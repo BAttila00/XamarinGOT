@@ -11,6 +11,7 @@ namespace XamarinGOT.DataBase {
             database = new SQLiteConnection(dbPath);
 
             database.CreateTable<CharacterBase>();
+            database.CreateTable<CharactersInBook>();
 
         }
 
@@ -36,6 +37,36 @@ namespace XamarinGOT.DataBase {
 
         public int DeleteCharacterBase(CharacterBase CharacterBase) {
             return database.Delete(CharacterBase);
+        }
+
+        #endregion
+
+        #region CharactersInBook
+
+        public List<CharactersInBook> GetCharactersInBook() {
+            return database.Table<CharactersInBook>().ToList();
+        }
+
+        public CharactersInBook GetCharacterInBook(int id) {
+            return database.Table<CharactersInBook>()
+                            .Where(i => i.ID == id)
+                            .FirstOrDefault();
+        }
+
+        public int SaveCharacterInBook(CharactersInBook CharacterInBook) {
+            if (CharacterInBook.ID != 0) {
+                return database.Update(CharacterInBook);
+            } else {
+                return database.Insert(CharacterInBook);
+            }
+        }
+
+        public int DeleteCharacterInBook(CharactersInBook CharacterInBook) {
+            return database.Delete(CharacterInBook);
+        }
+
+        public List<CharactersInBook> GetCharactersInBookByBookUrl(string url) {
+            return database.Table<CharactersInBook>().Where(w => w.BookUrl == url).ToList();
         }
 
         #endregion
