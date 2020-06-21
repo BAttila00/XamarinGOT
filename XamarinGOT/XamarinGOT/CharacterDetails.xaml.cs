@@ -57,6 +57,8 @@ namespace XamarinGOT
         private async void FillViewFields(string url) {
             var service = new GOTService();
             Character = await service.GetCharacterAsync(url);
+            //igy is lehetne:
+            //Character = await service.GetAsync<Character>(new Uri(url));
 
             HideEmptyFieldsOnView();
 
