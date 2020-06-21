@@ -38,6 +38,8 @@ namespace XamarinGOT {
         public async void FillViewFields(string url) {
             var service = new GOTService();
             Book = await service.GetBookAsync(url);
+            //lehetne igy is:
+            Book = await service.GetAsync<Book>(new Uri(url));
 
             BookTitle.Text = Book.name;
             BookIsbn.Text = Book.isbn;

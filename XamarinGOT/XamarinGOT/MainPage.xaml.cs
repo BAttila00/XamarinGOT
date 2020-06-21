@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using XamarinGOT.DataBase;
 using XamarinGOT.Models;
@@ -53,7 +54,7 @@ namespace XamarinGOT {
                     MainList.ItemsSource = SearchResultThroneBooks;
                     break;
                 case "Characters":
-                    SearchResultCharacters.Clear();
+                    SearchResultCharactersBase.Clear();
                     foreach (var item in CharactersBase) {
                         if (item.name.ToLower().Contains(Search.Text))
                             SearchResultCharactersBase.Add(item);
@@ -84,7 +85,10 @@ namespace XamarinGOT {
                 case "Characters":
                     //var selectedCharacter = (Character)selectedItem;
                     var selectedCharacter = (CharacterBase)selectedItem;
-                    Navigation.PushAsync(new CharacterDetails(selectedCharacter.url));
+                    //https://docs.microsoft.com/en-us/xamarin/essentials/connectivity?tabs=android
+                    var current = Connectivity.NetworkAccess;
+                    if (current == NetworkAccess.Internet)
+                        Navigation.PushAsync(new CharacterDetails(selectedCharacter.url));
                     break;
                 case "Houses":
                     var selectedHouse = (House)selectedItem;
@@ -102,7 +106,12 @@ namespace XamarinGOT {
             switch (selectedCategory) {
                 case "Books":
                     if (!ThroneBooks.Any()) {
-                        var books = await service.GetSelectedList<Book>(selectedCategory.ToLower());
+                        var books = new List<Book>();
+                        try {
+                            books = await service.GetSelectedList<Book>(selectedCategory.ToLower());
+                        } catch (Exception) {
+
+                        }
                         foreach (var item in books) {
                             ThroneBooks.Add(item);
                         }
@@ -127,7 +136,12 @@ namespace XamarinGOT {
                     break;
                 case "Houses":
                     if (!Houses.Any()) {
-                        var houses = await service.GetSelectedList<House>(selectedCategory.ToLower());
+                        var houses = new List<House>();
+                        try {
+                            houses = await service.GetSelectedList<House>(selectedCategory.ToLower());
+                        } catch (Exception) {
+
+                        }
                         foreach (var item in houses) {
                             Houses.Add(item);
                         }
